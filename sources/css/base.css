@@ -1,0 +1,236 @@
+:root {
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: rgba(0,0,0, 0.8);
+    --primary-color: #ea8025;
+    --boder-color: #dbdbdb;
+    --star-gold-color: #FFCE3E;
+
+    --height-header: 63px;
+    --nav-height: 32px;
+    --header-with-search: calc(var(--header-height) - var(--nav-height));
+    --header-sort-bar-height: 40px;
+}
+
+* {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    /* 10px */
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--white-color);
+}
+
+/*-----Animation-----*/
+
+@keyframes sideIn {
+    from {
+
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes faceIn {
+    from {
+        opacity: 0;
+        width: 0%;
+    }
+    to {
+        opacity: 1;
+        width: 100%;
+    }
+}
+
+@keyframes growth {
+    from {
+        transform: scale(var(--growth-from));
+    }
+    to {
+        transform:scale(var(--growth-to));
+    }
+}
+
+@keyframes historySideIn {
+    from {
+        opacity: 0;
+        top: calc(var(--header-height) / 2);
+    }
+    to {
+        opacity: 1;
+        top: 68px;
+    }
+}
+/* -----Btn---- */
+
+.btn {
+    min-width: 142px;
+    height: 40px;
+    border: 2px solid var(--primary-color);
+    font-size: 1.4rem;
+    font-weight: 700;
+    outline: none;
+    cursor: pointer;
+    color: var(--primary-color);
+    background-color: var(--white-color);
+    padding: 6px 15px;
+    text-transform: uppercase;
+    display: inline-block;
+    position: relative;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    overflow: hidden;
+    z-index: 1;
+    transition: all .75s;
+}
+
+.btn.btn-disable {
+    color: #949494;
+    background-color: #c3c3c3;
+    cursor: default;
+}
+  
+.btn:hover {
+    color: var(--white-color);
+    z-index: 2;
+}
+  
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -10%;
+    width: 0;
+    height: 100%;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    transform:  skewX(25deg);
+    z-index: -1;
+    transition: width .75s;
+}
+
+.btn:hover::before {
+    width: 120%;
+}
+
+/* -----Modal layout */
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    animation: faceIn linear 0.1s;
+}
+
+.modal-overlay {
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.modal-body {
+    --growth-from: 0.7;
+    --growth-to: 1;
+    margin: auto;
+    z-index: 1;
+    animation: growth linear 0.1s;
+}
+
+.cavar-form-social {
+    background-color: #f5f5f5;
+    padding: 16px 36px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+}
+
+.cavar-form-social a {
+    text-decoration: none;
+}
+
+.connect-social {
+    font-size: 1.6rem;
+    border-radius: 2px;
+}
+
+.social-facebook,
+.connect-social {
+    background-color: #3A5A98;
+    color: var(--white-color);
+    overflow: hidden;
+}
+
+.btn-size-s {
+    height: 32px;
+    display: flex;
+    align-items: center;
+    padding: 0 0 0 6px;
+}
+
+.social-google {
+    background-color: var(--white-color);
+    color: #666;
+}
+
+.social-title {
+    margin: 0 28px;
+}
+
+/* Selection */
+
+.select-input {
+    background-color: var(--white-color);
+    min-width: 214px;
+    height: 34px;
+    border-radius: 2px;
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    position: relative;   
+}
+
+.select-input:hover .select-input__item {
+    display: block;
+    z-index: 1;
+    box-shadow: 0 1px 2px rgba(122, 122, 122, 0.3);
+}
+
+.select-input__item {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--white-color);
+    height: 88px;
+    list-style: none;
+    padding: 10px 14px;
+    display: none;
+    border-radius: 2px;
+}
