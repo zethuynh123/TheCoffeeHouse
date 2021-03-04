@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./sources/css/normalizer_css_cdn.css">
     <link rel="stylesheet" href="./sources/fontawesome-free-5.13.1/css/all.min.css">
 
@@ -30,14 +30,35 @@
                     <div class="header__nav">
                         <nav class="header__nav--select">
                             <ul class="header__nav--list">
-                                <li class="header__nav--item">
+                                <li class="header__nav--item item-active">
                                     <a class="header__nav--link" href="">Câu chuyện thương hiệu</a>
+                                </li>
+                                <li class="header__nav--item">
                                     <a class="header__nav--link" href="">Chuyện cà phê</a>
+                                </li>
+                                
+                                <li class="header__nav--item">
                                     <a class="header__nav--link" href="">Sản phẩm</a>
-                                    <a class="header__nav--link" href="">Cửa hàng</a>
+                                    <ul class="header__nav--sub-menu">
+                                        <li>
+                                            <a href="">Cà phê robusta</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Cà phê blen</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Cà phê arabica</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                
+                                <li class="header__nav--item">
                                     <a class="header__nav--link" href="">Tin tức</a>
+                                </li>
+                                <li class="header__nav--item">
                                     <a class="header__nav--link" href="">Hỗ trợ</a>
                                 </li>
+
                             </ul>
                         </nav>
                         <div class="header__nav--cart">
@@ -53,8 +74,9 @@
             <div class="hero__main">
                 <div class="hero__name">
                     <div class="hero__heading">Nguyen Coffee</div>
-                    <span class="hero__partition">welcome</span>    
+                    <p class="hero__partition">welcome</p>    
                 </div>
+                <p class="hero__sub">Address: 238 Nguyen Sinh Cung, Phuong Vi Da, Hue</p>
             </div>
         </section>
         <!-- End hero  -->
