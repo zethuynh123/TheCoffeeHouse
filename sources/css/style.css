@@ -24,8 +24,8 @@
 }
 
 .header__logo a {
-    font-size: 20px;
-    font-style: italic;
+    font-size: 2rem;
+    letter-spacing: .5rem;
 }
 
 .header__search input{
@@ -83,6 +83,7 @@
 
 .header__nav--link i:hover {
     color: var(--primary-color);
+    cursor: pointer;
     transition: all .5s;
 }
 
@@ -127,12 +128,61 @@ ul li:hover .header__nav--sub-menu li a {
     position: relative;
 }
 
-.header__nav--cart a i {
+.header__nav--cart-icon {
     color: var(--white-color);
     font-size: 2rem;
+    transition: all .5s;
 }
 
+.header__nav--cart-icon:hover {
+    cursor: pointer;
+    color: var(--primary-color);
+}
 
+.header__nav--cart:hover.header__nav--cart::before {
+    display: block;
+}
+
+.header__nav--cart-wrap {
+    display: inline-block;
+    position: relative;
+    padding: 0 8px;
+    cursor: pointer;
+}
+
+.header__nav--cart-no-item {
+    position: absolute;
+    display: none;
+    content: '';
+    background-color: var(--white-color);
+    height: 160px;
+    width: 250px;
+    color: var(--black-color);
+    top: 40px;
+    right: 3px;
+}
+
+.header__nav--cart-wrap:hover .header__nav--cart-no-item {
+    display: block;
+    z-index: 1;
+}
+
+.header__nav--cart-no-item::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: -27.5px;
+    right: 0.2px;
+    border-width: 14px;
+    border-style: solid;
+    border-color: transparent transparent var(--white-color) transparent;
+    cursor: pointer;
+}
+
+.header__nav--cart-no-item-img {
+    width: 100%;
+    padding: 2rem;
+}
 
 /* Hero  */
 
@@ -160,20 +210,19 @@ ul li:hover .header__nav--sub-menu li a {
 
 .hero__name {
     position: relative;
-    top: 40%;
+    top: 35%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate( -90%, -30%);
+    max-width: 700px;
+    text-align: left;
+    line-height: 1.5;
 }
 
 .hero__heading {
-    font-size: 8rem;
+    font-size: 2.4rem;
     text-transform: uppercase;
     margin-bottom: 5rem;
-    letter-spacing: 5px;
-}
-
-.hero__partition {
-
+    font-weight: 800;
 }
 
 .hero__sub {
@@ -187,12 +236,9 @@ ul li:hover .header__nav--sub-menu li a {
 }
 
 .hero__partition {
-    font-size:  2.2rem;
-    font-style: italic;
-    font-family: var(--secondary-font);
-    color: var(--secondary-font-color);
+    font-size:  1.6rem;
     font-weight: 100;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 
 .first-letter {
@@ -461,3 +507,18 @@ img {
     max-width: 100%;
     height: auto;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
