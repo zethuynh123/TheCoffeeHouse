@@ -47,56 +47,85 @@ a {
 
 /*-----Animation-----*/
 
-@keyframes sideIn {
-    from {
+/* Animation */
 
+@keyframes fadeUp {
+    0% {
+        transform: translateY(4rem);
     }
-    to {
-        transform: translateX(0);
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-@keyframes faceIn {
-    from {
-        opacity: 0;
-        width: 0%;
+@keyframes scale {
+    0% {
+        transform: scale(2);
     }
-    to {
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes grow {
+    0% {
+        width: 0;;
+    }
+    100% {
         opacity: 1;
         width: 100%;
     }
 }
 
-@keyframes growth {
-    from {
-        transform: scale(var(--growth-from));
+@keyframes spin {
+    0% {
+       transform: rotate(0);
     }
-    to {
-        transform:scale(var(--growth-to));
+    100% {
+        opacity: 1;
+        transform: rotate(-360deg);
     }
 }
 
-@keyframes historySideIn {
-    from {
-        opacity: 0;
-        top: calc(var(--header-height) / 2);
+
+
+@keyframes fadeDown {
+    0% {
+        transform: translateY(-1rem);
     }
-    to {
+    100% {
         opacity: 1;
-        top: 68px;
+        transform: translateY(0);
+    }
+}
+
+@keyframes up {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-1.1rem);
     }
 }
 /* -----Btn---- */
 
 .btn {
-    min-width: 142px;
+    min-width: 52px;
     height: 40px;
-    border: 2px solid var(--primary-color);
-    font-size: 1.4rem;
+    border: 2px solid var(--black-color);
+    font-size: 1.3rem;
     font-weight: 700;
     outline: none;
     cursor: pointer;
-    color: var(--primary-color);
+    color: var(--black-color);
     background-color: var(--white-color);
     padding: 6px 15px;
     text-transform: uppercase;
@@ -107,12 +136,6 @@ a {
     overflow: hidden;
     z-index: 1;
     transition: all .75s;
-}
-
-.btn.btn-disable {
-    color: #949494;
-    background-color: #c3c3c3;
-    cursor: default;
 }
   
 .btn:hover {
@@ -127,8 +150,8 @@ a {
     left: -10%;
     width: 0;
     height: 100%;
-    background-color: var(--primary-color);
-    color: var(--white-color);
+    background-color: var(--black-color);
+    color: var(--black-color);
     transform:  skewX(25deg);
     z-index: -1;
     transition: width .75s;
@@ -137,6 +160,64 @@ a {
 .btn:hover::before {
     width: 120%;
 }
+
+
+
+.btn-item-active {
+    border-color: var(--primary-color);
+    color: var(--white-color);
+    background-color: var(--primary-color);
+    margin-right: 1.6rem;
+
+}
+  
+.btn-item-active:hover {
+    color: var(--primary-color);
+    z-index: 2;
+}
+  
+.btn-item-active::before {
+    background-color: var(--white-color);
+    color: var(--black-color);
+}
+
+
+.btn-item {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    background-color: var(--white-color);
+
+}
+  
+.btn-item:hover {
+    color: var(--white-color);
+    z-index: 2;
+}
+  
+.btn-item:before {
+    background-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+
+/* --btn-cta  */
+.btn-cta {
+    color: var(--black-color);
+    background-color: var(--white-color);
+
+}
+  
+.btn-cta:hover {
+    color: var(--white-color);
+    z-index: 2;
+}
+  
+.btn-cta::before {
+    background-color: var(--black-color);
+    color: var(--white-color);
+}
+/* ---end btn-cta---- */
+
 
 /* -----Modal layout */
 
